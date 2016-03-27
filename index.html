@@ -68,6 +68,7 @@ if ("geolocation" in navigator) {
 }
 
 $('.js-geolocation').on('click', function() {
+  $("#weather").html("Loading...");
   var geoError = function(error) {
     console.log('Error occurred. Error code: ' + error.code);
     var decode = {
@@ -76,13 +77,14 @@ $('.js-geolocation').on('click', function() {
       2: "position unavailable",
       3: "timed out",
     };
-    alert("Error occurred: " + decode[error.code]);
+    $("#weather").html("Error occurred: " + decode[error.code]);
   }
   var geoOptions = {
     timeout: 10 * 1000
   }
   navigator.geolocation.getCurrentPosition(function(position) {
-    loadWeather(position.coords.latitude+','+position.coords.longitude);
+    console.log(position.coords.latitude+','+position.coords.longitude);
+    loadWeather(position.coords.latitude+','+position.coords.longitude, "");
   },geoError, geoOptions);
 });
 
