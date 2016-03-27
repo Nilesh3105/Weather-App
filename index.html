@@ -6,7 +6,7 @@
     <title>Weather App</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     
-    //<link rel="stylesheet" href="//codepen.io/assets/reset/normalize.css">
+    <!--<link rel="stylesheet" href="//codepen.io/assets/reset/normalize.css">-->
     <link rel='stylesheet prefetch' href='https://rawgit.com/erikflowers/weather-icons/master/css/weather-icons.css'>
     <style>
       body {
@@ -48,7 +48,7 @@
         border-radius: 5px;
       }
     </style>
-    <script src="//assets.codepen.io/assets/libs/prefixfree.min-d258f6cb24f3a877e4fb83b348ec8a3f.js"></script>
+    <!--<script src="//assets.codepen.io/assets/libs/prefixfree.min-d258f6cb24f3a877e4fb83b348ec8a3f.js"></script>-->
   </head>
 
   <body>
@@ -68,7 +68,7 @@ if ("geolocation" in navigator) {
 }
 
 $('.js-geolocation').on('click', function() {
-  $("#weather").html("Loading...");
+  $("#weather").html("<p>Loading...</p>");
   var geoError = function(error) {
     console.log('Error occurred. Error code: ' + error.code);
     var decode = {
